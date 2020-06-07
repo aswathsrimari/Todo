@@ -52,7 +52,7 @@ const Home = () =>{
 
     const stProps = {
         margin: '40px',
-        border:'1px solid green'
+        border:'1px solid blue'
     }
 
 

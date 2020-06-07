@@ -41,7 +41,7 @@ const Search = () =>{
 
 
     const searchData = () =>{
-        if(search){
+        if(search && isAuthenticated()){
             list({search: search || undefined, label: label},user._id,token)
             .then(response=>{
                 if(response.error){
