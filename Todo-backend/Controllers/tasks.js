@@ -136,18 +136,21 @@ exports.listByLabel = (req,res)=>{
 }
 
 exports.listBySearchEmail = (req,res)=>{
-    const query = {};
-    console.log(req.profile.email)
-        query.email = {$regex:req.profile.email,$options:'i'};
-        query.name = {$regex:req.query.search,$options:'i'}
-        Task.find(query,(err,task)=>{
+    const query = {}
+    if(req.query.search){
+        query.email=req.profile.email;
+        query.name={$regex: req.query.search, $options: 'i'}
+        if(req.query.label && req.query.label!= 'All'){
+            query.label = req.query.label
+        }
+        Task.find(query, (err, tasks) =>{
             if(err){
                 return res.status(400).json({
-                    error: "No task found"
+                    error: errorHandler(err)
                 })
             }
-            res.json({
-                task
-            });
+            res.json(tasks)
         });
+    }
+    
 }

@@ -98,7 +98,7 @@ const ModifyTask = ({match}) =>{
         }
     
         const taskForm = () =>(
-            <form onSubmit={clickSubmit}>
+            <form onSubmit={clickSubmit}  style={{margin:"0px 0px 40px 0px"}}>
                 <div className="form-group">
                     <label className="text-muted">Task name </label>
                     <input type="text" className="form-control" onChange={handleChange('name')} value={name}/>
@@ -174,7 +174,7 @@ const ModifyTask = ({match}) =>{
 
     
         return (
-            <Layout title="TODO" description="CREATE TASK" className="container col-md-8 offset-md-2">
+            <Layout title="myTODO" description="CREATE TASK" className="container col-md-8 offset-md-2">
                 {showSuccess()}
                 {showLoading()}
                 {taskForm()}    

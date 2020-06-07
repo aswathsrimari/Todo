@@ -2,18 +2,19 @@ const User = require('../Models/users')
 const jwt = require('jsonwebtoken') // to generate signed token
 const expressJwt = require('express-jwt') // for authorization check
 
-
 exports.signup = (req,res)=>{
     console.log(req.body);
     const user = new User(req.body);
 
     //save email and hashed password in the database
     user.save((err,user)=>{
+        
         if(err){
             return res.status(400).json({
                 err
             })
         }
+
         user.salt = undefined
         user.hashed_password = undefined
         res.json({

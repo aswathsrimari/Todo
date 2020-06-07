@@ -1,5 +1,5 @@
 import {API} from '../config'
-
+import emailjs from 'emailjs-com'
 
 
 export const authenticate = (data,next) =>{
@@ -21,13 +21,16 @@ export const signin = (user) =>{
         body: JSON.stringify(user)
     })
     .then(response =>{
+
         return response.json();
+
     })
     .catch(err=>{
         return err;
     })
 
 }   
+
 
 
 export const signup = (user) =>{
@@ -40,6 +43,16 @@ export const signup = (user) =>{
         body : JSON.stringify(user)
     })
     .then(response=>{
+        var templateParams = {
+            email:user.email,
+        };
+        emailjs.send('gmail', 'template_kllHHESb', templateParams,'user_zOLpPo9rQpJLoZDSApP23')
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+
        return response.json();
     })
     .catch(err=>{

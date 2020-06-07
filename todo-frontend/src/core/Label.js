@@ -77,7 +77,7 @@ const Label = () =>{
     )
 
     return (
-        <Layout title="TODO" description="CREATE LABEL" className="container">
+        <Layout title="myTODO" description="CREATE LABEL" className="container">
             <div className="row">
                 <div className="col-md-8 offset-md-2">
                     {showSucces()} 

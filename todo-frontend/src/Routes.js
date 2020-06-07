@@ -18,7 +18,6 @@ const Routes = () =>{
                 <PrivateRoute path="/addLabel" exact component={Label} />
                 <PrivateRoute path="/updateTask/:taskId" exact component={ModifyTask} />
 
-
             </Switch>    
         </BrowserRouter>
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 import Menu from './Menu'
 
-const Layout = ({title="TODO",description="TASK MANAGEMENT APPLICATION",className,children}) =>(
+const Layout = ({title="myTODO",description="TASK MANAGEMENT APPLICATION",className,children}) =>(
     <div>
         <Menu />
         <div className="jumbotron jumbotron-fluid ">

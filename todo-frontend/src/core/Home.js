@@ -4,6 +4,7 @@ import { Redirect,Link } from 'react-router-dom';
 import {getTasks} from '../auth/apiCore';
 import {isAuthenticated} from '../auth'
 import Card from './Card'
+import Search from './Search'
 const Home = () =>{
 
 
@@ -51,15 +52,16 @@ const Home = () =>{
 
     const stProps = {
         margin: '40px',
-        border:'15px solid green'
+        border:'1px solid green'
     }
 
 
     return (
-        <Layout title="TODO" description="TASK MANAGEMENT APPLICATION" className="container col-md-8 offset-md-2">
+        <Layout title="myTODO" description="TASK MANAGEMENT APPLICATION" className="container col-md-8 offset-md-2">
             <div className="btn btn-group-lg col-4"><Link to="/addTask"><button className="btn btn-primary">ADD TASK</button></Link></div>
 
-            <h2 className="mb-4">Your Todo </h2>
+            <Search />
+            <h2 className="mb-4">YOUR TODO: </h2>
              <div className="col">
             {tasks.map((task, i )=>(<div key={i} className="col" style={stProps}><Card task={task}/> </div>)  
              )}

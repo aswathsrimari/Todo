@@ -70,7 +70,7 @@ const Signup = () =>{
     )
 
     return (
-        <Layout title="TODO" description="SIGN UP" className="container col-md-8 offset-md-2"> 
+        <Layout title="myTODO" description="SIGN UP" className="container col-md-8 offset-md-2"> 
         
         {showLoading()}
         {signupForm()}

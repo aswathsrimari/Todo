@@ -81,7 +81,7 @@ const Signin = () =>{
 
 
     return ( 
-        <Layout title="TODO" description="SIGN IN" className="container col-md-8 offset-md-2">
+        <Layout title="myTODO" description="SIGN IN" className="container col-md-8 offset-md-2">
         {showLoading()}
         {signinForm()}
         {showError()}

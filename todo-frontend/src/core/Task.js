@@ -82,7 +82,7 @@ const Task = () =>{
     }
 
     const taskForm = () =>(
-        <form onSubmit={clickSubmit}>
+        <form onSubmit={clickSubmit} style={{margin:"0px 0px 40px 0px"}}>
             <div className="form-group">
                 <label className="text-muted">Task name </label>
                 <input type="text" className="form-control" onChange={handleChange('name')} value={name}/>
@@ -110,7 +110,7 @@ const Task = () =>{
 
             <div className="form-group">
                 <label for="text-muted">Due date and time</label>
-            <input type="datetime-local" id="duetime" className="form-control" value={due} onChange={handleTime} />
+            <input type="datetime-local" id="d.mailuetime" className="form-control" value={due} onChange={handleTime} />
             </div>
 
             <div className="form-group">
@@ -147,7 +147,7 @@ const Task = () =>{
 
 
     return (
-        <Layout title="TODO" description="CREATE TASK" className="container col-md-8 offset-md-2">
+        <Layout title="myTODO" description="CREATE TASK" className="container col-md-8 offset-md-2">
             {showSuccess()}
             {showLoading()}
             {taskForm()}    

@@ -1,6 +1,6 @@
 import React from 'react'
 import {API} from '../config'
-
+import queryString from 'query-string'
 
 export const getLabels = (userId,token) =>{
     return fetch(`${API}/labels/${userId}`,{
@@ -126,4 +126,25 @@ export const deleteTask = (taskId,userId,token) =>{
     .catch(err=>{
         return err;
     })
+}
+
+
+export const list =(params,userId,token) =>{
+    const query = queryString.stringify(params);
+    console.log(query);
+    return fetch(`${API}/tasks/search/${userId}?${query}`,{
+        method:"GET",
+        headers:{
+            Accept: 'application/json',
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        }
+
+        })
+        .then(response=>{
+            return response.json();
+        })
+        .catch(err=>{
+            return err;
+        })
 }
