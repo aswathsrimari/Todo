@@ -5,25 +5,25 @@ to run the application-
 
 1) download the code zip or clone it to local repository.
 clone the repo in a empty folder
-> cd emptyfolder
-> git clone https://github.com/aswathsrimari/Todo .  ##(don't miss dot(.) at end)
+  a)cd emptyfolder
+  b)git clone https://github.com/aswathsrimari/Todo .  ##(don't miss dot(.) at end)
 
 2) run "npm install" to install all the dependencies.
-> cd todo-frontend
-> npm install
-.....
-> cd ..
-> cd Todo-backend
-> npm install
-......
+ a)cd todo-frontend
+ b)npm install
+.....loading
+c)cd ..
+d) cd Todo-backend
+e)npm install
+......loading
 
 3) now run the server 
-> npm start
+a) npm start
 
 4) leave the backend. enter frontend to run the app.
-> cd..
-> cd todo-frontend
-> npm start
+a)cd..
+b) cd todo-frontend
+c) npm start
 
 5) now the application runs in a localhost:3000.
 
