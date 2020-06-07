@@ -37,6 +37,8 @@ exports.signin = (req,res)=>{
                 error:"Incorrect password"
             })
         }
+        console.log("userid");
+        console.log(user._id);
         const token = jwt.sign({_id:user._id},process.env.JWT_SECRET)
         res.cookie('token',token,{expire: new Date()+9999})
         const {_id,email} = user
