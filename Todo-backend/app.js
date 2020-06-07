@@ -49,7 +49,7 @@ app.use(express.static(path.join(__dirname, "../todo-frontend/build")));
 const port = process.env.PORT || 8000
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "../todo-frontend/public/index.html"));
+    res.sendFile(path.join(__dirname + "/../todo-frontend/build/index.html"));
 
 });
 
