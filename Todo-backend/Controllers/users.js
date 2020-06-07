@@ -11,12 +11,12 @@ exports.signup = (req,res)=>{
         
         if(err){
             return res.status(400).json({
-                err
+                error:"signup failed"
             })
         }
 
         user.salt = undefined
-        user.hashed_password = undefined
+        user.hashed_password = undefinederr
         res.json({
             user
         })
@@ -27,15 +27,10 @@ exports.signin = (req,res)=>{
     //find user based on email
     const {email,password} = req.body
     User.findOne({email},(err,user)=>{
-        if(err || !user){
+        if(err || !user || !user.authenticate(password)){
             return res.status(400).json({
-                error:"Email invalid. SignUp"
+                error:"Email or password invalid. SignUp"
             });
-        }
-        if(!user.authenticate(password)){
-            res.status(401).json({
-                error:"Incorrect password"
-            })
         }
         console.log("userid");
         console.log(user._id);

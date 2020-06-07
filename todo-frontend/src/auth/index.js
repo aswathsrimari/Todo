@@ -81,6 +81,7 @@ export const signout = (next) =>{
             method:"POST"
         })
         .then(response=>{
+            window.location.reload(true)
             return response.json();
         })
         .catch(err=>{
