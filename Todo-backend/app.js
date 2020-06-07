@@ -16,7 +16,7 @@ const taskRoutes = require('./Routes/tasks')
 
 //db connection
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URI,{
+mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://asm:6225asm1072@nodeapp-uw6kz.mongodb.net/test?retryWrites=true&w=majority',{
     useNewUrlParser:true,
     useCreateIndex: true,
     useUnifiedTopology: true
