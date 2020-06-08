@@ -21,7 +21,7 @@ export const getLabels = (userId,token) =>{
 }
 
 export const getTasks = (userId,token) =>{
-    return fetch(`/api/api/tasks/${userId}`,{
+    return fetch(`/api/tasks/${userId}`,{
         method:"GET",
         headers:{
             Accept: 'application/json',
