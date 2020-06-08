@@ -3,7 +3,7 @@ import {API} from '../config'
 import queryString from 'query-string'
 
 export const getLabels = (userId,token) =>{
-    return fetch(`${API}/labels/${userId}`,{
+    return fetch(`/labels/${userId}`,{
         method:"GET",
         headers:{
             Accept: 'application/json',
@@ -21,7 +21,7 @@ export const getLabels = (userId,token) =>{
 }
 
 export const getTasks = (userId,token) =>{
-    return fetch(`${API}/tasks/${userId}`,{
+    return fetch(`/tasks/${userId}`,{
         method:"GET",
         headers:{
             Accept: 'application/json',
@@ -39,7 +39,7 @@ export const getTasks = (userId,token) =>{
 }
 
 export const addLabel = (label,userId,token) =>{
-    return fetch(`${API}/label/create/${userId}`,{
+    return fetch(`/label/create/${userId}`,{
         method:"POST",
         headers:{
             Accept: 'application/json',
@@ -58,7 +58,7 @@ export const addLabel = (label,userId,token) =>{
 }
 
 export const createTask = (userId,token,task) =>{
-    return fetch(`${API}/task/create/${userId}`,{
+    return fetch(`/task/create/${userId}`,{
         method:"POST",
         headers:{
             Accept: 'application/json',
@@ -77,7 +77,7 @@ export const createTask = (userId,token,task) =>{
 }
 
 export const readTask = (taskId,token) =>{
-    return fetch(`${API}/task/${taskId}`,{
+    return fetch(`/task/${taskId}`,{
         method:"GET",
 
     })
@@ -90,7 +90,7 @@ export const readTask = (taskId,token) =>{
 }
 
 export const updateTask = (userId,taskId,token,task) =>{
-    return fetch(`${API}/task/${taskId}/${userId}`,{
+    return fetch(`/task/${taskId}/${userId}`,{
         method:"PUT",
         headers:{
             Accept: 'application/json',
@@ -110,7 +110,7 @@ export const updateTask = (userId,taskId,token,task) =>{
 
 
 export const deleteTask = (taskId,userId,token) =>{
-    return fetch(`${API}/task/${taskId}/${userId}`,{
+    return fetch(`/task/${taskId}/${userId}`,{
         method:'DELETE',
         headers:{
             Accept: 'application/json',
@@ -132,7 +132,7 @@ export const deleteTask = (taskId,userId,token) =>{
 export const list =(params,userId,token) =>{
     const query = queryString.stringify(params);
     console.log(query);
-    return fetch(`${API}/tasks/search/${userId}?${query}`,{
+    return fetch(`/tasks/search/${userId}?${query}`,{
         method:"GET",
         headers:{
             Accept: 'application/json',

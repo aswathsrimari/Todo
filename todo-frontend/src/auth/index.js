@@ -12,7 +12,7 @@ export const authenticate = (data,next) =>{
 export const signin = (user) =>{
     console.log(API);
     console.log(user)
-    return fetch(`${API}/signin`,{
+    return fetch(`/signin`,{
         method:"POST",
         headers : {
             Accept:"appplication/json",
@@ -34,7 +34,7 @@ export const signin = (user) =>{
 
 
 export const signup = (user) =>{
-    return fetch(`${API}/signup`,{
+    return fetch(`/signup`,{
         method:"POST",
         headers: {
             Accept:"application/json",
@@ -77,7 +77,7 @@ export const signout = (next) =>{
         localStorage.removeItem('jwt');
         next();
 
-        return fetch(`${API}/signout`,{
+        return fetch(`/signout`,{
             method:"POST"
         })
         .then(response=>{
