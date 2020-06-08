@@ -3,7 +3,7 @@ import {API} from '../config'
 import queryString from 'query-string'
 
 export const getLabels = (userId,token) =>{
-    return fetch(`/labels/${userId}`,{
+    return fetch(`/api/labels/${userId}`,{
         method:"GET",
         headers:{
             Accept: 'application/json',
@@ -21,7 +21,7 @@ export const getLabels = (userId,token) =>{
 }
 
 export const getTasks = (userId,token) =>{
-    return fetch(`/tasks/${userId}`,{
+    return fetch(`/api/api/tasks/${userId}`,{
         method:"GET",
         headers:{
             Accept: 'application/json',
@@ -39,7 +39,7 @@ export const getTasks = (userId,token) =>{
 }
 
 export const addLabel = (label,userId,token) =>{
-    return fetch(`/label/create/${userId}`,{
+    return fetch(`/api/label/create/${userId}`,{
         method:"POST",
         headers:{
             Accept: 'application/json',
@@ -58,7 +58,7 @@ export const addLabel = (label,userId,token) =>{
 }
 
 export const createTask = (userId,token,task) =>{
-    return fetch(`/task/create/${userId}`,{
+    return fetch(`/api/task/create/${userId}`,{
         method:"POST",
         headers:{
             Accept: 'application/json',
@@ -77,7 +77,7 @@ export const createTask = (userId,token,task) =>{
 }
 
 export const readTask = (taskId,token) =>{
-    return fetch(`/task/${taskId}`,{
+    return fetch(`/api/task/${taskId}`,{
         method:"GET",
 
     })
@@ -90,7 +90,7 @@ export const readTask = (taskId,token) =>{
 }
 
 export const updateTask = (userId,taskId,token,task) =>{
-    return fetch(`/task/${taskId}/${userId}`,{
+    return fetch(`/api/task/${taskId}/${userId}`,{
         method:"PUT",
         headers:{
             Accept: 'application/json',
@@ -110,7 +110,7 @@ export const updateTask = (userId,taskId,token,task) =>{
 
 
 export const deleteTask = (taskId,userId,token) =>{
-    return fetch(`/task/${taskId}/${userId}`,{
+    return fetch(`/api/task/${taskId}/${userId}`,{
         method:'DELETE',
         headers:{
             Accept: 'application/json',
@@ -132,7 +132,7 @@ export const deleteTask = (taskId,userId,token) =>{
 export const list =(params,userId,token) =>{
     const query = queryString.stringify(params);
     console.log(query);
-    return fetch(`/tasks/search/${userId}?${query}`,{
+    return fetch(`/api/tasks/search/${userId}?${query}`,{
         method:"GET",
         headers:{
             Accept: 'application/json',

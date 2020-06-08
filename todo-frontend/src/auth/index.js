@@ -12,7 +12,7 @@ export const authenticate = (data,next) =>{
 export const signin = (user) =>{
     console.log(API);
     console.log(user)
-    return fetch(`/signin`,{
+    return fetch(`/api/signin`,{
         method:"POST",
         headers : {
             Accept:"appplication/json",
@@ -34,7 +34,7 @@ export const signin = (user) =>{
 
 
 export const signup = (user) =>{
-    return fetch(`/signup`,{
+    return fetch(`/api/signup`,{
         method:"POST",
         headers: {
             Accept:"application/json",
