@@ -28,6 +28,7 @@ c) npm start
 5) now the application runs in a localhost:3000. \
 
 Continue using the application.Have fun!!
+Updating readme. 
 
 
 
